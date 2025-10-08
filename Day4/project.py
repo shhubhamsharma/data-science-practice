@@ -53,7 +53,8 @@ print("Step 5 — Find Subject Toppers")
 subject_toppers={}
 
 for subject in ["Math","Science","English"]:
-    topper=df.loc[df[subject].idxmax(),["Name","SchoolName",subject]]
+    topper = df.sort_values(by=subject, ascending=False).head(1)[["Name", "SchoolName", subject]]
+    # topper=df.loc[df[subject].idxmax(),["Name","SchoolName",subject]]
     subject_toppers[subject]= topper
 print(subject_toppers)
 
