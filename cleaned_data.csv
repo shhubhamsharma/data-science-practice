@@ -1,0 +1,7 @@
+Name,City,Score,Age,Gender,Category
+Frank,Bangalore,85.0,29.0,Male,High
+Bob,Mumbai,80.0,30.0,Male,Medium
+Unknown,Mumbai,92.0,33.0,Female,High
+Alice,New Delhi,65.0,25.0,Female,Medium
+Charlie,New Delhi,77.0,35.0,Male,Medium
+Eve,Pune,75.0,29.5,Female,Medium
