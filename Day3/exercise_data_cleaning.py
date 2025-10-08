@@ -3,7 +3,9 @@
 
 import pandas as pd
 import numpy as np
-
+# ----------------------------
+# STEP 1 — Create Sample Data
+# ----------------------------
 data = {
     "Name": ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Alice", None],
     "City": ["Delhi", "Mumbai", "Delhi", np.nan, "Pune", "Bangalore", "Delhi", "Mumbai"],
@@ -13,6 +15,11 @@ data = {
 }
 df = pd.DataFrame(data)
 print(df)
+
+
+# ---------------------------------------------------
+# EXERCISE 1 — Basic Filtering with Conditions
+# ---------------------------------------------------
 
 # Select all rows where City is "Delhi".
 df_city_delhi =  df[df["City"].isin(["Delhi"])]
@@ -46,6 +53,9 @@ Replace missing Name values with "Unknown".
 
 💡 Hint: Use isna(), dropna(), and fillna().
 '''
+# ---------------------------------------------------
+# EXERCISE 2 — Handling Missing Values
+# ---------------------------------------------------
 
 print("Find all rows that have any missing value.")
 df_missing_value_row= df.isna()
@@ -72,6 +82,9 @@ df =df.fillna({"Name":"Unknown"})
 print(df)
 
 
+# ---------------------------------------------------
+# EXERCISE 3 — Replacing & Mapping
+# ---------------------------------------------------
 
 '''
 EXERCISE 3 — Replacing & Mapping
@@ -105,6 +118,11 @@ df.loc[df["Score"]>80,'Category']="High"
 print("add column")
 print(df)
 
+
+# ---------------------------------------------------
+# EXERCISE 4 — Removing Duplicates & Outliers
+# ---------------------------------------------------
+
 '''
 EXERCISE 4 — Removing Duplicates & Outliers
 🎯 Tasks
@@ -133,6 +151,10 @@ print("Remove those Age <20>60")
 df=df[df["Age"].between(20,60)]
 print(df)
 
+
+# ---------------------------------------------------
+# EXERCISE 5 — Complex Filtering
+# ---------------------------------------------------
 '''
 EXERCISE 5 — Complex Filtering
 🎯 Tasks
@@ -162,6 +184,10 @@ df=df.sort_values("City")
 print(df)
 df_grouped=df.groupby("City").head(3)
 print(df_grouped)
+
+# ---------------------------------------------------
+# SAVE CLEANED DATA
+# ---------------------------------------------------
 
 print("SAVING Cleaned")
 print(df.to_csv("./cleaned_data.csv",index=False))
